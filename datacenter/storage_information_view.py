@@ -7,9 +7,7 @@ from .models import Visit
     
 
 def storage_information_view(request):
-    
     at_the_entrance = Visit.objects.filter( leaved_at__isnull=True)
-
     results = []
     for visit in at_the_entrance: 
         entered_original = visit.entered_at 
@@ -23,11 +21,8 @@ def storage_information_view(request):
             'duration': formatted_elapsed_time 
         })
          
-    
-    
-    
     context = {
-        'non_closed_visits': results,  # не закрытые посещения
+        'non_closed_visits': results, 
     }
     return render(request, 'storage_information.html', context)
 
