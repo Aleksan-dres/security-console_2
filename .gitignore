@@ -3,3 +3,4 @@
 .replit 
 pyproject.toml 
 poetry.lock
+pycache
