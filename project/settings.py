@@ -1,8 +1,8 @@
 import os
-from environs import Env 
+from environs import env
 
-env = Env()
-env.read_env() 
+
+env.read_env()
 DATABASES = {
     'default': {
         'ENGINE': env.str('DB_ENGINE'),
@@ -19,7 +19,7 @@ INSTALLED_APPS = ['datacenter']
 SECRET_KEY = env.str('SECRET_KEY')
 
 
-DEBUG =  env.bool('DEBUG', default=True)
+DEBUG = env.bool('DEBUG', default=True)
 
 ROOT_URLCONF = 'project.urls'
 
